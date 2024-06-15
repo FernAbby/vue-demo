@@ -3,6 +3,7 @@ import './assets/main.css'
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import components from './components'
 import 'element-plus/dist/index.css'
 import 'bep-ui/dist/es/style.css'
 
@@ -15,6 +16,8 @@ const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
+
+app.use(components)
 
 app.use(ElementPlus, {
   locale: zhCn

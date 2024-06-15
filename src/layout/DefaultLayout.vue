@@ -16,7 +16,6 @@
         </nav>
       </div>
     </header>
-
     <RouterView />
   </div>
 </template>
