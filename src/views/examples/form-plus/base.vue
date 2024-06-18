@@ -185,9 +185,9 @@
   }
   const formRef = ref<IFormPlusRef>()
   const form = ref({
-    name: '章三',
+    name: '张三',
     age: 10,
-    address: '四川省成都市高新区天府三街世豪瑞丽1栋2单元2506',
+    address: '四川省成都市高新区天府三街保利观园',
     color: '#ffffff',
     percent: 60
   })
