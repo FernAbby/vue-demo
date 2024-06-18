@@ -27,5 +27,5 @@ module.exports = {
     // .vue文件明明必须是多个单词命名
     "vue/multi-word-component-names": "off",
   },
-  ignorePatterns: ["dist", "node_modules"]
+  ignorePatterns: ["dist", "node_modules", "docs"]
 }
