@@ -6,7 +6,7 @@
   import { BepSearchForm } from 'bep-ui'
   import { courses } from '@/const/course'
 
-  const schema = {
+  const schema: IFormSchema = {
     name: {
       title: '姓名',
       renderType: 'InputText'
@@ -48,7 +48,7 @@
       renderType: 'SearchSelect',
       hidden: '!$.grade',
       renderOptions: {
-        remoteMethod: (query) => {
+        remoteMethod: (query: string) => {
           return Promise.resolve(courses.filter((item) => item.label.includes(query)))
         }
       }

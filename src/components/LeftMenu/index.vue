@@ -7,7 +7,7 @@
   import { ref } from 'vue'
   import MenuItems from '@/components/LeftMenu/MenuItems.vue'
   import type { IMenuItem } from '@/components/LeftMenu/interface'
-  import { onMounted } from 'vue'
+  import { onMounted, watch } from 'vue'
   import { setExpandAttr } from '@/components/LeftMenu/utils'
   defineOptions({
     name: 'LeftMenu',
@@ -25,9 +25,16 @@
 
   const menuList = ref<IMenuItem[]>([])
 
-  onMounted(() => {
-    menuList.value = setExpandAttr(props.items, props.defaultCollapse)
-  })
+  watch(
+    () => props.items,
+    (value) => {
+      console.log('value===>', value)
+      menuList.value = setExpandAttr(value, props.defaultCollapse)
+    },
+    {
+      immediate: true,
+    }
+  )
 </script>
 <style lang="scss">
   @mixin router-link {

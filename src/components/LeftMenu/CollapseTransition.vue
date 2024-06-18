@@ -5,6 +5,7 @@
 </template>
 <script lang="ts" setup>
   import { addClass, hasClass, removeClass } from './utils'
+  import type { TransitionProps } from 'vue'
 
   defineOptions({
     name: 'CollapseTransition'
@@ -19,7 +20,7 @@
     onBeforeEnter: (el: HTMLElement) => (el.style.opacity = '0.2'),
     // 在元素被插入到 DOM 之后的下一帧被调用
     // 用这个来开始进入动画
-    onEnter(el: HTMLElement, done) {
+    onEnter(el: HTMLElement, done: () => void) {
       addClass(el, opacityCls)
       el.style.opacity = '1'
       done()
@@ -66,5 +67,5 @@
     onLeaveCancelled(el: HTMLElement) {
       console.log('onLeaveCancelled===>', el)
     }
-    }
+  } as unknown as TransitionProps
 </script>

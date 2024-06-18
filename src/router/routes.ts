@@ -1,5 +1,5 @@
 import DefaultLayout from '@/layout/DefaultLayout.vue'
-import HomeView from '@/views/Dashboard/HomeView.vue'
+import HomeView from '@/views/dashboard/HomeView.vue'
 
 const routes = [
   {
@@ -18,7 +18,7 @@ const routes = [
         // route level code-splitting
         // this generates a separate chunk (About.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: () => import('../views/Dashboard/AboutView.vue')
+        component: () => import('../views/dashboard/AboutView.vue')
       }
     ]
   },
@@ -64,26 +64,34 @@ const routes = [
             component: () => import('../views/examples/TablePlus/DataTable.vue')
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    path: '/devtools',
+    name: 'devtools',
+    component: () => import('../layout/StandardLayout/index.vue'),
+    redirect: '/devtools/transitions',
+    children: [
       {
         path: 'transitions',
         name: 'transitions',
         children: [
           {
             path: 'base',
-            component: () => import('../views/examples/transitions/base.vue')
+            component: () => import('@/views/devtools/transitions/base.vue')
           }
         ]
       },
       {
         path: 'download',
         name: 'download',
-        component: () => import('../views/examples/DownloadView.vue')
+        component: () => import('../views/devtools/DownloadView.vue')
       },
       {
         path: 'devtool',
         name: 'devtool',
-        component: () => import('../views/examples/DevToolView.vue')
+        component: () => import('../views/devtools/DevToolView.vue')
       }
     ]
   }

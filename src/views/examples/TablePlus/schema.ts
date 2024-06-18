@@ -1,4 +1,4 @@
-import type { ISchema } from '@bep-ui/components/FormPlus/interface'
+import type { ISchema } from 'bep-ui'
 
 export const schema: ISchema['properties'] = {
   name: {

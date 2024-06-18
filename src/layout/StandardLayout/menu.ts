@@ -1,4 +1,5 @@
-const menuList = [
+// 示例 菜单
+export const examplesMenuList = [
   {
     title: '概览',
     key: 'guide',
@@ -31,24 +32,33 @@ const menuList = [
         path: '/examples/table/data'
       }
     ]
-  },
+  }
+]
+
+// 调试 菜单
+export const devtoolsMenuList = [
   {
     title: '动画',
-    path: '/examples/transitions',
+    path: '/devtools/transitions',
     children: [
       {
         title: '折叠动画',
-        path: '/examples/transitions/base'
+        path: '/devtools/transitions/base'
       }
     ]
   },
   {
     title: '下载',
-    path: '/examples/download'
+    path: '/devtools/download'
   },
   {
     title: '调试',
-    path: '/examples/devtool'
+    path: '/devtools/devtool'
   }
 ]
-export default menuList
+
+export default {
+  devtools: devtoolsMenuList,
+  examples: examplesMenuList,
+}
+

@@ -1,4 +1,4 @@
-import type { ITableColumn } from '@bep-ui/components'
+import type { ITableColumn } from 'bep-ui'
 
 export const columns: ITableColumn[] = [
   {

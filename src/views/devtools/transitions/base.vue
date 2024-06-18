@@ -21,7 +21,7 @@
     <SectionTitle>过渡效果命名</SectionTitle>
     <div class="section-content">
       <el-button size="small" type="primary" @click="show3 = !show3">切换动画</el-button>
-      <Transition name="fade">
+      <Transition name="list">
         <div class="content" v-if="show3">{{ content }}</div>
       </Transition>
     </div>
@@ -54,6 +54,16 @@
   .fade-enter-from,
   .fade-leave-to {
     opacity: 0;
+  }
+
+  .list-enter-active,
+  .list-leave-active {
+    transition: all 0.1s linear;
+  }
+  .list-enter-from,
+  .list-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
   }
 
   .page-container {
