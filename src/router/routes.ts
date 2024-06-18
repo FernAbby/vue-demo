@@ -40,7 +40,12 @@ const routes = [
           {
             path: 'base',
             name: 'base-form',
-            component: () => import('../views/examples/FormPlusView.vue')
+            component: () => import('../views/examples/form-plus/base.vue')
+          },
+          {
+            path: 'search-form',
+            name: 'search-form',
+            component: () => import('../views/examples/form-plus/search-form.vue')
           }
         ],
       },

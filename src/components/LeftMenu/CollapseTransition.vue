@@ -1,7 +1,7 @@
 <template>
-  <transition mode="out-in" v-bind="listeners">
+  <Transition mode="out-in" v-bind="listeners">
     <slot />
-  </transition>
+  </Transition>
 </template>
 <script lang="ts" setup>
   import { addClass, hasClass, removeClass } from './utils'
@@ -9,28 +9,29 @@
   defineOptions({
     name: 'CollapseTransition'
   })
+
   const opacityCls = 'menu-opacity-transition'
   const collapseCls = 'menu--collapse'
 
   const listeners = {
     // 在元素被插入到 DOM 之前被调用
     // 用这个来设置元素的 "enter-from" 状态
-    onBeforeEnter: (el) => (el.style.opacity = '0.2'),
+    onBeforeEnter: (el: HTMLElement) => (el.style.opacity = '0.2'),
     // 在元素被插入到 DOM 之后的下一帧被调用
     // 用这个来开始进入动画
-    onEnter(el, done) {
+    onEnter(el: HTMLElement, done) {
       addClass(el, opacityCls)
       el.style.opacity = '1'
       done()
     },
     // 当进入过渡完成时调用
-    onAfterEnter(el) {
+    onAfterEnter(el: HTMLElement) {
       removeClass(el, opacityCls)
       el.style.opacity = ''
     },
     // 在 leave 钩子之前调用
     // 大多数时候，你应该只会用到 leave 钩子
-    onBeforeLeave(el) {
+    onBeforeLeave(el: HTMLElement) {
       if (!el.dataset) {
         ;(el as any).dataset = {}
       }
@@ -58,11 +59,11 @@
     },
     // 在离开过渡完成、
     // 且元素已从 DOM 中移除时调用
-    fonAfterLeave(el) {
+    fonAfterLeave(el: HTMLElement) {
       console.log('fonAfterLeave===>', el)
     },
     // 仅在 v-show 过渡中可用
-    onLeaveCancelled(el) {
+    onLeaveCancelled(el: HTMLElement) {
       console.log('onLeaveCancelled===>', el)
     }
     }

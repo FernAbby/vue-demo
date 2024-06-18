@@ -4,14 +4,13 @@
     :schema="schema"
     :model="form"
     :rules="rules"
-    layout="grid"
     label-width="70px"
   >
     <template #append>
-      <el-space>
+      <div class="page-footer">
         <el-button @click="handleReset">重置</el-button>
         <el-button type="primary" @click="handleSubmit">提交</el-button>
-      </el-space>
+      </div>
     </template>
   </BepFormPlus>
 </template>
@@ -175,7 +174,12 @@
       percent: {
         title: '进度',
         renderType: 'Slider',
-        required: true
+        required: true,
+        renderOptions: {
+          style: {
+            width: '60%'
+          }
+        }
       }
     }
   }
@@ -196,3 +200,9 @@
     formRef.value?.reset()
   }
 </script>
+<style lang="scss" scoped>
+  .page-footer {
+    padding: 10px 30px;
+    display: flex;
+  }
+</style>

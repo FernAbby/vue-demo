@@ -1,3 +1,7 @@
+export const grades = [
+
+]
+
 export const states = [
   'Alabama',
   'Alaska',

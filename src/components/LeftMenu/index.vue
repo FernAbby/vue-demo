@@ -23,7 +23,7 @@
     }
   })
 
-  const menuList = ref([])
+  const menuList = ref<IMenuItem[]>([])
 
   onMounted(() => {
     menuList.value = setExpandAttr(props.items, props.defaultCollapse)

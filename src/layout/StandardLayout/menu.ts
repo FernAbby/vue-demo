@@ -6,7 +6,17 @@ const menuList = [
   },
   {
     title: '表单',
-    path: '/examples/form'
+    path: '/examples/form/base',
+    children: [
+      {
+        title: '基础表单',
+        path: '/examples/form/base'
+      },
+      {
+        title: '搜索表单',
+        path: '/examples/form/search-form'
+      }
+    ]
   },
   {
     title: '表格',

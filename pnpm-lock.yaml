@@ -12,8 +12,8 @@ dependencies:
     specifier: 1.0.10
     version: 1.0.10(element-plus@2.7.5)(typescript@5.4.5)
   biz-gadgets:
-    specifier: ^1.0.4
-    version: 1.0.4
+    specifier: ^1.0.6
+    version: 1.0.6
   element-plus:
     specifier: ^2.7.5
     version: 2.7.5(vue@3.4.27)
@@ -2051,6 +2051,10 @@ packages:
 
   /biz-gadgets@1.0.4:
     resolution: {integrity: sha512-ZNN2fDd0A+0d/o9fyOMYBGc/LtRFST4TdfbltkHAP/Hf1C9Ovaz8YBsW7r8sBBMVW3dXn+dKHUO3LbUD69H2KA==}
+    dev: false
+
+  /biz-gadgets@1.0.6:
+    resolution: {integrity: sha512-EtAQJsHq9T+HqXpp0J66Z0K4zKJdbYE2Y14mVraGKRwzi/riIJ0xhigfs92DoDwzS4XSnE6XAdcPF3dhMkYTkw==}
     dev: false
 
   /blob-util@2.0.2:

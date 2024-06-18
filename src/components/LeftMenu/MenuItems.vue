@@ -38,9 +38,8 @@
       default: false
     }
   })
-  const handleToggle = (item) => {
+  const handleToggle = (item: IMenuItem) => {
     item.isExpand = !item.isExpand
-    // console.log('点击===>', item.isExpand, item.title)
   }
 </script>
 <style lang="scss">
