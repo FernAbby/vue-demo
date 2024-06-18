@@ -18,7 +18,7 @@
   import type { FormRules } from 'element-plus'
   import { BepFormPlus } from 'bep-ui'
   import { ref } from 'vue'
-  import type { ISchema, IOption, IFormPlusRef } from 'bep-ui'
+  import type { IFormSchema, IOption, IFormPlusRef } from 'bep-ui'
   import { states } from '@/const/select'
 
   const rules: FormRules = {
@@ -31,7 +31,7 @@
     label: item
   }))
 
-  const schema: ISchema = {
+  const schema: IFormSchema = {
     renderType: 'Object',
     properties: {
       baseInfo: {
