@@ -1,9 +1,9 @@
-import type { App } from 'vue'
+import type { App, Component } from 'vue'
 
 import SectionTitle from './SectionTitle/index.vue'
 import LeftMenu from './LeftMenu/index.vue'
 
-const components = {
+const components: Record<string, Component> = {
   SectionTitle,
   LeftMenu
 }
@@ -11,7 +11,9 @@ const components = {
 export default {
   install: (app: App) => {
     Object.keys(components).forEach((key) => {
-      app.component(key, components[key])
+      if (components[key]) {
+        app.component(key, components[key])
+      }
     })
   }
 }
