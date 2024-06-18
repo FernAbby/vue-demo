@@ -1,61 +1,35 @@
 # vue-demo
 
-This template should help get you started developing with Vue 3 in Vite.
+bep-ui是一个基于element plus + vue@>=3.4.0 二次开发，以 schema 驱动的组件库
 
-## Recommended IDE Setup
+bep-ui组件库中基于 表单、表格 [示例](https://fernabby.github.io/vue-demo/#/examples/form/base)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 安装
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+```shell
+pnpm add bep-ui
 ```
 
-### Compile and Hot-Reload for Development
+## 使用
 
-```sh
-npm run dev
-```
+## 界面
 
-### Type-Check, Compile and Minify for Production
+### 表单
 
-```sh
-npm run build
-```
+#### 基础表单
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+![基础表单](./public/sources/base-form.png)
 
-```sh
-npm run test:unit
-```
+#### 搜索表单
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+![搜索表单](./public/sources/search-form.png)
 
-```sh
-npm run test:e2e:dev
-```
+### 表格
 
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
+#### 基础表格
 
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
+![基础表格](./public/sources/base-table.png)
 
-```sh
-npm run build
-npm run test:e2e
-```
+#### 数据展示表单
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+![数据展示表格](./public/sources/data-table.png)
