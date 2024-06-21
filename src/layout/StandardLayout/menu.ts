@@ -1,8 +1,9 @@
 // 示例 菜单
-export const examplesMenuList = [
+import type { IMenuItem } from '@/components/LeftMenu/interface'
+
+export const examplesMenuList: IMenuItem[] = [
   {
     title: '概览',
-    key: 'guide',
     path: '/examples/guide'
   },
   {

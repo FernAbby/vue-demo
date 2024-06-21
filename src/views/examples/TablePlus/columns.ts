@@ -2,6 +2,10 @@ import type { ITableColumn } from 'bep-ui'
 
 export const columns: ITableColumn[] = [
   {
+    title: '学号',
+    dataIndex: 'studentId',
+  },
+  {
     title: '姓名',
     dataIndex: 'name',
     columnProps: {
@@ -21,7 +25,14 @@ export const columns: ITableColumn[] = [
     dataIndex: 'class'
   },
   {
-    title: '地址',
-    dataIndex: 'address'
+    title: '入学时间',
+    dataIndex: 'date'
+  },
+  {
+    title: '家庭地址',
+    dataIndex: 'address',
+    columnProps: {
+      width: 250
+    }
   }
 ]

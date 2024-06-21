@@ -1,8 +1,8 @@
 # vue-demo
 
-bep-ui是一个基于element plus + vue@>=3.4.0 二次开发，以 schema 驱动的组件库
+bep-ui是一个基于vue3 + element plus 二次开发，以schema驱动快速生成管理台表单、表格页面的UI库
 
-bep-ui组件库中基于 表单、表格 [示例](https://fernabby.github.io/vue-demo/#/examples/form/base)
+[组件使用示例](https://fernabby.github.io/vue-demo/#/examples/form/base)
 
 ## 安装
 

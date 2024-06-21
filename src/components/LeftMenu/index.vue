@@ -17,7 +17,7 @@
       type: Array as () => IMenuItem[],
       default: () => ([])
     },
-    defaultCollapse: {
+    defaultExpand: {
       type: Boolean,
       default: false
     }
