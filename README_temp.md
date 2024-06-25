@@ -1,5 +1,11 @@
 # vue-demo
 
+## 打包发布静态文件
+
+1. 合并代码到gh-pages分支
+2. 执行`pnpm build`打包文件到docs目录
+3. 代码推送到github上，等几分钟就更新到github.io上
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
