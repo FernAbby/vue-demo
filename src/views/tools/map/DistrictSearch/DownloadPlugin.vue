@@ -37,7 +37,7 @@
   import JSZip from 'jszip'
   import { baseDownload } from 'biz-gadgets'
   import { fetchDistrictTree } from './utils'
-  import { IDistrictItem } from './interface'
+  import type { IDistrictItem } from './interface'
 
   const levels = [
     {
@@ -105,7 +105,7 @@
   const handleDownload = () => {
     loading.value = true
     const fileName = singleFileName[downloadChoices.level]
-    fetchDistrictTree(Number(downloadChoices.level)).then((result) => {
+    fetchDistrictTree(Number(downloadChoices.level) as 1 | 2 | 3).then((result) => {
       districtTree = result
       // 单文件下载
       if (downloadChoices.organize === 'single' || downloadChoices.level === '1') {

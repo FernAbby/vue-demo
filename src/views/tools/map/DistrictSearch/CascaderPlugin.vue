@@ -16,7 +16,7 @@
 </template>
 <script lang="ts" setup>
   import { onMounted, reactive } from 'vue'
-  import type { ILevelKey } from './interface'
+  import type { ICLevelKey, IDistrictItem, ILevelKey } from './interface'
   import { fetchDistrictList, nextLevel } from './utils'
   const polygons: any[] = []
 
@@ -32,8 +32,8 @@
     street: '街道'
   }
 
-  const levels = Object.keys(levelOptions) as Omit<ILevelKey, 'country'>[]
-  const districtList = reactive({
+  const levels = Object.keys(levelOptions) as ICLevelKey[]
+  const districtList = reactive<any>({
     province: [],
     city: [],
     district: [],
