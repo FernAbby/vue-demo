@@ -36,6 +36,13 @@ export const examplesMenuList: IMenuItem[] = [
   }
 ]
 
+export const toolsMenuList = [
+  {
+    title: '省市区联动数据',
+    path: '/tools/district-tree',
+  }
+]
+
 // 调试 菜单
 export const devtoolsMenuList = [
   {
@@ -61,5 +68,6 @@ export const devtoolsMenuList = [
 export default {
   devtools: devtoolsMenuList,
   examples: examplesMenuList,
+  tools: toolsMenuList,
 }
 

@@ -16,10 +16,12 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1",
     "@element-plus/icons-vue": "^2.3.1",
     "bep-ui": "1.0.10",
     "biz-gadgets": "^1.0.6",
     "element-plus": "^2.7.5",
+    "jszip": "^3.10.1",
     "pinia": "^2.1.7",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"

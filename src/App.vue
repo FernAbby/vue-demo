@@ -6,7 +6,8 @@
         <span class="page-layout_header__title-text">BepUI</span>
       </div>
       <RouterLink class="nav-link" to="/">首页</RouterLink>
-      <RouterLink class="nav-link" to="/examples">示例</RouterLink>
+      <RouterLink class="nav-link" to="/examples">BepUI</RouterLink>
+      <RouterLink class="nav-link" to="/tools">工具</RouterLink>
       <RouterLink class="nav-link" to="/devtools">调试</RouterLink>
     </div>
     <div class="page-layout_content">

@@ -21,7 +21,7 @@
   watch(
     () => router.currentRoute.value,
     (route) => {
-      const match = route.path.match(/^\/(devtools|examples)\/.*?$/)
+      const match = route.path.match(/^\/(devtools|examples|tools)\/.*?$/)
       if (match) {
         const module = match[1] as 'devtools' | 'examples'
         if (module && currentModule.value !== module) {

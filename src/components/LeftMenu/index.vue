@@ -7,7 +7,7 @@
   import { ref } from 'vue'
   import MenuItems from '@/components/LeftMenu/MenuItems.vue'
   import type { IMenuItem } from '@/components/LeftMenu/interface'
-  import { onMounted, watch } from 'vue'
+  import { watch } from 'vue'
   import { setExpandAttr } from '@/components/LeftMenu/utils'
   defineOptions({
     name: 'LeftMenu',
@@ -28,7 +28,7 @@
   watch(
     () => props.items,
     (value) => {
-      console.log('value===>', value)
+      // console.log('value===>', value)
       menuList.value = setExpandAttr(value, props.defaultCollapse)
     },
     {

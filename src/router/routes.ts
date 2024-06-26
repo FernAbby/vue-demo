@@ -68,6 +68,19 @@ const routes = [
     ]
   },
   {
+    path: '/tools',
+    name: 'tools',
+    component: () => import('../layout/StandardLayout/index.vue'),
+    redirect: '/tools/district-tree',
+    children: [
+      {
+        path: 'district-tree',
+        name: 'district-tree',
+        component: () => import('@/views/tools/map/DistrictSearch/index.vue'),
+      }
+    ]
+  },
+  {
     path: '/devtools',
     name: 'devtools',
     component: () => import('../layout/StandardLayout/index.vue'),
