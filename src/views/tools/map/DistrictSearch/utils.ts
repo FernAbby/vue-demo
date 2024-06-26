@@ -1,4 +1,4 @@
-import type { ILevelKey } from './interface'
+import type { IDistrictItem, ILevelKey } from './interface'
 import { Level } from './interface'
 
 export function nextLevel(level: ILevelKey) {
@@ -15,7 +15,10 @@ export function formatDistrictData(data = []): IDistrictItem[] {
 }
 
 // 获取省份信息
-export function fetchDistrictList(level = 'country', searchKey = '中国') {
+export function fetchDistrictList(level = 'country', searchKey = '中国'): Promise<{
+  list: IDistrictItem[]
+  boundaries: any[]
+}> {
   return new Promise((resolve) => {
     new AMap.DistrictSearch({
       level: level, // 关键字对应的行政区级别，country 表示国家

@@ -37,6 +37,7 @@
   import JSZip from 'jszip'
   import { baseDownload } from 'biz-gadgets'
   import { fetchDistrictTree } from './utils'
+  import { IDistrictItem } from './interface'
 
   const levels = [
     {
@@ -78,7 +79,11 @@
   ]
 
   let districtTree: IDistrictItem[] = []
-  const downloadChoices = reactive({
+  const downloadChoices = reactive<{
+    level: '1' | '2' | '3'
+    named: 'code' | 'name'
+    organize: 'single' | 'multiple'
+  }>({
     level: '3',
     named: 'name',
     organize: 'single'
@@ -87,7 +92,7 @@
 
   const collectFiles = (data: IDistrictItem[], zip: JSZip) => {
     data.forEach((item) => {
-      zip.file(`${item[downloadChoices.named as 'code' | 'name']}.json`, JSON.stringify(item))
+      zip.file(`${item[downloadChoices.named]}.json`, JSON.stringify(item))
     })
   }
 
@@ -99,7 +104,7 @@
 
   const handleDownload = () => {
     loading.value = true
-    const fileName = singleFileName[downloadChoices.level as '1' | '2' | '3']
+    const fileName = singleFileName[downloadChoices.level]
     fetchDistrictTree(Number(downloadChoices.level)).then((result) => {
       districtTree = result
       // 单文件下载

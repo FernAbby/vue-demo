@@ -29,7 +29,7 @@
     () => props.items,
     (value) => {
       // console.log('value===>', value)
-      menuList.value = setExpandAttr(value, props.defaultCollapse)
+      menuList.value = setExpandAttr(value, props.defaultExpand)
     },
     {
       immediate: true,

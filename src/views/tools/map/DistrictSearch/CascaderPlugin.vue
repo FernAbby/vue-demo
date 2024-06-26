@@ -16,10 +16,9 @@
 </template>
 <script lang="ts" setup>
   import { onMounted, reactive } from 'vue'
-  import { Level } from './interface'
   import type { ILevelKey } from './interface'
   import { fetchDistrictList, nextLevel } from './utils'
-  const polygons = []
+  const polygons: any[] = []
 
   const props = defineProps({
     map: Object,
@@ -33,7 +32,7 @@
     street: '街道'
   }
 
-  const levels = Object.keys(levelOptions) as ILevelKey[]
+  const levels = Object.keys(levelOptions) as Omit<ILevelKey, 'country'>[]
   const districtList = reactive({
     province: [],
     city: [],
@@ -109,7 +108,7 @@
   }
 
   onMounted(() => {
-    fetchDistrictList().then(({ list, boundaries }) => {
+    fetchDistrictList().then(({ list }) => {
       districtList.province = list
     })
   })
