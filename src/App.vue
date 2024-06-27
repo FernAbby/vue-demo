@@ -3,10 +3,10 @@
     <div class="page-layout_header">
       <div class="page-layout_header__title">
         <img class="page-layout_header__title-logo" alt="Vue logo" src="@/assets/logo.svg" />
-        <span class="page-layout_header__title-text">BepUI</span>
+        <span class="page-layout_header__title-text">Vue Demo</span>
       </div>
       <RouterLink class="nav-link" to="/">首页</RouterLink>
-      <RouterLink class="nav-link" to="/examples">BepUI</RouterLink>
+      <RouterLink class="nav-link" to="/examples">BepUI Demo</RouterLink>
       <RouterLink class="nav-link" to="/tools">工具</RouterLink>
       <RouterLink class="nav-link" to="/devtools">调试</RouterLink>
     </div>

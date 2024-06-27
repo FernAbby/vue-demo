@@ -1,11 +1,13 @@
 import type { IDistrictItem, ILevelKey } from './interface'
 import { Level } from './interface'
 
+type ISearchStatus = 'complete' | 'no_data' | 'error'
+
 export function nextLevel(level: ILevelKey) {
   return Level[Level[level] + 1]
 }
 
-export function formatDistrictData(data = []): IDistrictItem[] {
+export function formatDistrictData(data: any[] = []): IDistrictItem[] {
   return data
     .map((item) => ({
       code: item.adcode,
@@ -15,21 +17,24 @@ export function formatDistrictData(data = []): IDistrictItem[] {
 }
 
 // 获取省份信息
-export function fetchDistrictList(level = 'country', searchKey = '中国'): Promise<{
+export function fetchDistrictList(
+  level = 'country',
+  searchKey = '中国'
+): Promise<{
   list: IDistrictItem[]
   boundaries: any[]
 }> {
   return new Promise((resolve) => {
-    new AMap.DistrictSearch({
+    new (AMap as any).DistrictSearch({
       level: level, // 关键字对应的行政区级别，country 表示国家
       subdistrict: 1, // 显示下级行政区级数，1表示返回下一级行政区
       extensions: 'all' // 返回行政区边界坐标组等具体信息
-    }).search(searchKey, function (status, result) {
+    }).search(searchKey, function (status: ISearchStatus, result: any) {
       // status：complete 表示查询成功，no_data 为查询无结果，error 代表查询错误
       // 查询成功时，result 即为对应的行政区信息
       if (status == 'complete') {
         resolve({
-          list: formatDistrictData(result.districtList[0].districtList || []),
+          list: formatDistrictData(result.districtList[0].districtList),
           boundaries: result.districtList[0]?.boundaries || []
         })
       } else {
@@ -54,7 +59,7 @@ export async function fetchDistrictTree(maxLevel: 1 | 2 | 3 = 2) {
       const cityList = (await fetchDistrictList('province', provinceList[i].code))['list']
       if (level > 2) {
         for (let j = 0; j < cityList.length; j++) {
-          cityList[i].children = (await fetchDistrictList('city', cityList[i].code))['list']
+          cityList[j].children = (await fetchDistrictList('city', cityList[j].code))['list']
         }
       }
       provinceList[i].children = cityList

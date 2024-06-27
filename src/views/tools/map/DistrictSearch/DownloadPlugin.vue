@@ -36,7 +36,7 @@
   import { reactive, ref } from 'vue'
   import JSZip from 'jszip'
   import { baseDownload } from 'biz-gadgets'
-  import { fetchDistrictTree } from './utils'
+  import { fetchDistrictList, fetchDistrictTree } from './utils'
   import type { IDistrictItem } from './interface'
 
   const levels = [

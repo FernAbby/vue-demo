@@ -1,10 +1,11 @@
 export interface IDistrictItem {
   code: string
   name: string
+  children?: IDistrictItem[]
 }
 
 export enum Level {
-  country ,
+  country,
   province,
   city,
   district,

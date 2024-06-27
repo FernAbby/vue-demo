@@ -8,11 +8,7 @@ import VueDevTools from 'vite-plugin-vue-devtools'
 // https://vitejs.dev/config/
 export default defineConfig({
   base: process.env.NODE_ENV === 'production' ? '/vue-demo' : '/',
-  plugins: [
-    vue(),
-    vueJsx(),
-    VueDevTools(),
-  ],
+  plugins: [vue(), vueJsx(), VueDevTools()],
   build: {
     outDir: 'docs'
   },

@@ -16,7 +16,7 @@
 </template>
 <script lang="ts" setup>
   import { onMounted, reactive } from 'vue'
-  import type { ICLevelKey, IDistrictItem, ILevelKey } from './interface'
+  import type { ICLevelKey, ILevelKey } from './interface'
   import { fetchDistrictList, nextLevel } from './utils'
   const polygons: any[] = []
 
@@ -37,7 +37,7 @@
     province: [],
     city: [],
     district: [],
-    street: [],
+    street: []
   })
   const formData = reactive<Record<string, any>>({
     province: '',
@@ -56,8 +56,8 @@
           fillColor: '#80d8ff',
           fillOpacity: 0.2,
           path: boundaries[i]
-        });
-        polygons.push(polygon);
+        })
+        polygons.push(polygon)
       }
       props.map.setFitView() // 地图自适应
     }
@@ -100,9 +100,15 @@
       })
     } else {
       switch (level) {
-        case 'province': clearProvince();break
-        case 'city': clearCity();break
-        case 'district': clearDistrict();break
+        case 'province':
+          clearProvince()
+          break
+        case 'city':
+          clearCity()
+          break
+        case 'district':
+          clearDistrict()
+          break
       }
     }
   }

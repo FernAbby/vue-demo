@@ -6,9 +6,16 @@ module.exports = {
   extends: [
     'plugin:vue/vue3-essential',
     'eslint:recommended',
+    'plugin:prettier/recommended',
     '@vue/eslint-config-typescript',
     // '@vue/eslint-config-prettier/skip-formatting'
   ],
+  plugins: [
+  'import', 'simple-import-sort'
+  ],
+  globals: {
+    'AMap': true
+  },
   overrides: [
     {
       files: [

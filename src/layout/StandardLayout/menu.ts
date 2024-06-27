@@ -39,7 +39,7 @@ export const examplesMenuList: IMenuItem[] = [
 export const toolsMenuList = [
   {
     title: '省市区联动数据',
-    path: '/tools/district-tree',
+    path: '/tools/district-tree'
   }
 ]
 
@@ -68,6 +68,5 @@ export const devtoolsMenuList = [
 export default {
   devtools: devtoolsMenuList,
   examples: examplesMenuList,
-  tools: toolsMenuList,
+  tools: toolsMenuList
 }
-
